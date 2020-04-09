@@ -1,13 +1,62 @@
 
 body {
+  margin: 0;
   background-color: rgb(20, 223, 230);
+  font-family: 'Alfa Slab One', cursive;
+
   /*font-family: 'Pacifico', cursive;
   font-family: 'Righteous', cursive;
   font-family: 'Fredoka One', cursive;
   font-family: 'Alfa Slab One', cursive;*/
 }
 
+.date {
+  font-size: 15px;
+  justify-self: left;
+  align-self: left;
+  color: rgb(19, 18, 18);
 
-ul {
-  font-family: 'Fredoka One', cursive;
 }
+
+.header {
+  height: 100px;
+  background-color: #333;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.footer {
+  height: 100px;
+  background-color: rgb(7, 7, 54);
+  color: whitesmoke;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent {
+  color: rgb(48, 6, 6);
+
+  text-align: center;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='checkbox'] {
+  width:30px;
+  height:30px;
+  background:white;
+  border-radius:5px;
+  border:2px solid #555;
+}
+

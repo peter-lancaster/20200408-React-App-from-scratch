@@ -1,8 +1,13 @@
 import React from "react"
 
 function Header() {
+
+
     return (
-        <header>This is my header - now amended</header>
+
+        <header className="header">
+            <span>This is my header</span>
+        </header>
     )
 }
 
