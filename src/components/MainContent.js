@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem"
+import todosData from "./todosData"
 
 function MainContent() {
 
@@ -11,18 +12,24 @@ function MainContent() {
         fontFamily: 'Fredoka One'
     }
 
-    function daySuffix(day){
-        switch (day) {
-            case 1: 
-            case 21: 
-            case 31: styles.color = "blue"; return "st";
-            case 2 :
-            case 22 : styles.color = "red"; return "nd";
-            case 3 : 
-            case 23 : styles.color = "green"; return "rd";
-            default: styles.color = "brown"; return "th";
-        }
+    
+function daySuffix(day){
+    switch (day) {
+        case 1: 
+        case 21: 
+        case 31: styles.color = "blue"; return "st";
+        case 2 :
+        case 22 : styles.color = "red"; return "nd";
+        case 3 : 
+        case 23 : styles.color = "green"; return "rd";
+        default: styles.color = "brown"; return "th";
     }
+}
+
+    console.log("todosData follows")
+    console.log(todosData)
+
+    let todoItemsList = todosData.map(element => <TodoItem key={element.id} item={element}/>)
 
     let monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
@@ -37,15 +44,7 @@ function MainContent() {
         <br />
         <span className="date" style={styles}>Date : {date.getDate()+daySuffix(date.getDate())+" "+monthName[(date.getMonth())]+" "+date.getFullYear()}</span>
         <br />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {todoItemsList}
         <br />
         <br />
     </main>)

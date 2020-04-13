@@ -1,5 +1,3 @@
-Why isn't this showing in github
-
 //For a beginner using npm (not yarn), I think I'd boil the "get up and running" information in the pages referenced below, to this:
 
 +++++++++++++++++++++++++++++++++++++++++++++++
