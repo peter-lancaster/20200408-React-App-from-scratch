@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import TodoItem from "./TodoItem"
 
 function MainContent() {
 
@@ -6,7 +7,8 @@ function MainContent() {
     const lastName = "Lancaster"
     let date = new Date();
     const styles = {
-        fontSize : "14px"
+        fontSize : "20px",
+        fontFamily: 'Fredoka One'
     }
 
     function daySuffix(day){
@@ -18,7 +20,7 @@ function MainContent() {
             case 22 : styles.color = "red"; return "nd";
             case 3 : 
             case 23 : styles.color = "green"; return "rd";
-            default: styles.color = "yellow"; return "th";
+            default: styles.color = "brown"; return "th";
         }
     }
 
@@ -35,26 +37,15 @@ function MainContent() {
         <br />
         <span className="date" style={styles}>Date : {date.getDate()+daySuffix(date.getDate())+" "+monthName[(date.getMonth())]+" "+date.getFullYear()}</span>
         <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
-        <input type="checkbox"></input><span>_____________________________________</span>
-        <br />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
         <br />
         <br />
     </main>)
