@@ -1,6 +1,9 @@
 import React from "react";
 import TodoItem from "./TodoItem"
 import todosData from "./todosData"
+import dateColor from "./dateColor"
+import daySuffix from "./daySuffix"
+import monthName from "./monthName"
 
 function MainContent() {
 
@@ -12,26 +15,11 @@ function MainContent() {
         fontFamily: 'Fredoka One'
     }
 
-    
-function daySuffix(day){
-    switch (day) {
-        case 1: 
-        case 21: 
-        case 31: styles.color = "blue"; return "st";
-        case 2 :
-        case 22 : styles.color = "red"; return "nd";
-        case 3 : 
-        case 23 : styles.color = "green"; return "rd";
-        default: styles.color = "brown"; return "th";
-    }
-}
+    //Call function to determine the color to apply to the date
+    styles.color = dateColor(date.getDate())
 
-    console.log("todosData follows")
-    console.log(todosData)
-
+    //Pass data required to generate list items to TodoItem component
     let todoItemsList = todosData.map(element => <TodoItem key={element.id} item={element}/>)
-
-    let monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
     return (<main className="mainContent">
 
@@ -42,7 +30,11 @@ function daySuffix(day){
 
         <span>To do list for {firstName + " " +lastName}</span>
         <br />
-        <span className="date" style={styles}>Date : {date.getDate()+daySuffix(date.getDate())+" "+monthName[(date.getMonth())]+" "+date.getFullYear()}</span>
+        <span className="date" style={styles}>
+            Date : {date.getDate()+daySuffix(date.getDate())+" "
+            +monthName[(date.getMonth())]+" "
+            +date.getFullYear()}
+        </span>
         <br />
         {todoItemsList}
         <br />
