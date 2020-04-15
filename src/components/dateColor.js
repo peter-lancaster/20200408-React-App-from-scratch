@@ -8,7 +8,7 @@ function dateColor(day){
         case 22 : return "red";
         case 3 : 
         case 23 : return "grey";
-        default: return "orange";
+        default: return "red";
     }
 }
 
