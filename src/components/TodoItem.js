@@ -1,7 +1,11 @@
 import React from "react"
-import handleCheckBoxClick from "./handleCheckBoxClick"
 
 function TodoItem(props) { 
+
+    const completedTaskStyle = {
+        textDecoration: "line-through", 
+        color: "#d3d3d3",
+        fontStyle: "italic"}
 
     return(
     <div className="todoText">
@@ -13,7 +17,7 @@ function TodoItem(props) {
             onChange = {function() {props.handleChange(props.item.id)}}
             >
         </input>
-        <label htmlFor="todo" >{props.item.text}</label>
+        <label htmlFor="todo" style={props.item.completed ? completedTaskStyle : null}>{props.item.text}</label>
     </div>)
 }
 
