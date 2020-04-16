@@ -10,7 +10,7 @@ function TodoItem(props) {
             checked={props.item.completed} 
             id="todo" 
             name ="todo"
-            onChange = {handleCheckBoxClick}
+            onChange = {function() {props.handleChange(props.item.id)}}
             >
         </input>
         <label htmlFor="todo" >{props.item.text}</label>
