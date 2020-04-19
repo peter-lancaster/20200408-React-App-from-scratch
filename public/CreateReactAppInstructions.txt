@@ -46,7 +46,10 @@ I'm now in the correct directory, and my command like looks like this
 
 2) On command line type 
 
-npx create-react-app my-app 
+npx create-react-app your-app-name 
+
+(NB - Obviously, replace "your-app-name" above with something more descriptive and specific to your project. 
+Also, don't include any uppercase letters in your app name (this isn't allowed, and if you do the project generation will fail))
 
 and press enter
 
@@ -87,7 +90,51 @@ C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\2
 
 3) I look in github, but do not see an additional repository. However, there is a .git folder in 
 C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch\my-app
-I will worry about pushing github a bit later.
+
+    To link the React work you've created on your machine with github, here are the steps you need to take:
+
+    3.1) Go into github and create a new repository that you're going to use to house your new work remotely on github. It's
+    a good idea to have the name match the filename you've used on yoru machine.
+
+    3.2) When you've created a new repository on github, then you need to link this repository with the local file on your 
+    machine. There are a number of ways to do this, in this case I'm going to use the method which is given to you when you create
+    the github repository (which is as follows).
+
+    3.3) Open GitBash on the local file on your machine, then use the command "git remote add origin" followed by the link 
+    supplied by github (which will look something like this "https://github.com/peter-lancaster/meme-generator-app.git"), and press
+    enter.
+
+    3.4) Check git status, and then use "git add ." and "git commit (if you need to)", and when you're ready, then use the command 
+    "git push -u origin master", and click enter.
+
+    3.5) Thats it. I think that future pushes will be fine with "git push origin master" (you won't need to include the "-u"). 
+    This view comes from here https://www.reddit.com/r/git/comments/3z43fa/in_the_command_git_push_u_origin_master_what_does/
+
+            "In the command "git push -u origin master", what does "-u" stand for?
+
+            Hi,
+
+            I apologize for this dumb question but I couldn't find the answer anywhere. What does "-u" do 
+            in "git push -u origin master"?
+            The command works just fine without using the -u flag. What is it's purpose? Also, where can 
+            I find the documentation for more flags like this? Thank you.
+            ·
+            4 years ago
+
+            "Upstream" is a reference that specifies which branch on which remote repository a local branch tracks. In effect, 
+            it represents a 'link' between the local and remote branches.
+
+            The command "git push -u origin master" sets the upstream of the current local branch, so that it tracks the master 
+            branch of the remote repository origin.
+
+            Typically, you only need to set the upstream once. Once it has been set, the "-u" is superfluous. Indeed, so is 
+            "origin master"; once you've set the upstream on the local branch, you can simply use "git push". The default 
+            target for push (and pull) is the upstream branch (unless you change the default settings).
+
+            Personally, whenever I create a new branch that I also want on a remote, the first command I run after checking 
+            out that new branch is "git push -u [remote name] [branch name]". Not only does that set the upstream for the 
+            branch, but if that branch name doesn't exist on the remote, Git creates it.
+
 
 4) Taking the suggestion above, I type on the command line "cd my-app", then enter. 
 
